@@ -23,27 +23,31 @@ namespace tt
         }
         static void Main(string[] args)
         {
-            string commit = "\'" + GenerateString()+ "\'";
+            string commit = "\'" + GenerateString() + "\'";
             string remoteControl = "https://github.com/HaciIsma/tt.git";
             //string command = $@"cd..; cd..; git init;git add .; git commit -m {commit};git remote add origin {remoteControl} ;git push -u origin master;pause";
 
-            Process process = new Process();
-            process.StartInfo.FileName = "cmd.exe";
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.RedirectStandardInput = true;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.UseShellExecute = false;
-            process.Start();
-            process.StandardInput.WriteLine("cd ..");
-            process.StandardInput.WriteLine("cd ..");
-            process.StandardInput.WriteLine("git init");
-            process.StandardInput.WriteLine("git add .");
-            process.StandardInput.WriteLine($"git commit -m {commit}");
-            process.StandardInput.WriteLine($"git remote add origin {remoteControl}");
-            process.StandardInput.WriteLine("git push -u origin master");
-            process.StandardInput.WriteLine("@Exit");
-            process.StandardInput.Flush();
-            process.StandardInput.Close();
+            using (Process process = new Process())
+            {
+                //Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                process.StandardInput.WriteLine("cd ..");
+                process.StandardInput.WriteLine("cd ..");
+                process.StandardInput.WriteLine("git init");
+                process.StandardInput.WriteLine("git add .");
+                process.StandardInput.WriteLine($"git commit -m {commit}");
+                process.StandardInput.WriteLine($"git remote add origin {remoteControl}");
+                process.StandardInput.WriteLine("git push -u origin master");
+                process.StandardInput.WriteLine("@Exit");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+
+            }
             //process.WaitForExit();
             //Console.WriteLine(process.StandardOutput.ReadToEnd());
             //Console.ReadKey();
