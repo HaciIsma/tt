@@ -46,15 +46,11 @@ namespace tt
                 process.StandardInput.WriteLine("@Exit");
                 process.StandardInput.Flush();
                 process.StandardInput.Close();
+                foreach (var process_ in Process.GetProcessesByName("chromedriver.exe"))
+                {
+                    process.Kill();
+                }
                 process.WaitForExit();
-                try
-                {
-                    process.StandardInput.WriteLine(" ");
-                }
-                catch (Exception)
-                {
-
-                }
             }
             //Console.WriteLine(process.StandardOutput.ReadToEnd());
             //Console.ReadKey();
