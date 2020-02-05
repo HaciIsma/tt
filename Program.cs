@@ -40,7 +40,8 @@ namespace tt
             process.StandardInput.WriteLine("git add .");
             process.StandardInput.WriteLine($"git commit -m {commit}");
             process.StandardInput.WriteLine($"git remote add origin {remoteControl}");
-            process.StandardInput.WriteLine($"git push -u origin master");
+            process.StandardInput.WriteLine("git push -u origin master");
+            process.StandardInput.WriteLine("exit");
             process.StandardInput.Flush();
             process.StandardInput.Close();
             process.WaitForExit();
