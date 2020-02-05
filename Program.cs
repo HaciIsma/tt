@@ -43,7 +43,7 @@ namespace tt
             process.StandardInput.WriteLine("git push -u origin master");
             process.StandardInput.WriteLine("exit");
             process.StandardInput.Flush();
-            process.StandardInput.Close();
+            //process.StandardInput.Close();
             //process.WaitForExit();
             //Console.WriteLine(process.StandardOutput.ReadToEnd());
             //Console.ReadKey();
