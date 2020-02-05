@@ -23,7 +23,7 @@ namespace tt
         }
         static void Main(string[] args)
         {
-            string commit = "\'" +"first" + "\'";
+            string commit = "\'" + GenerateString()+ "\'";
             string remoteControl = "https://github.com/HaciIsma/tt.git";
             //string command = $@"cd..; cd..; git init;git add .; git commit -m {commit};git remote add origin {remoteControl} ;git push -u origin master;pause";
 
@@ -44,8 +44,8 @@ namespace tt
             process.StandardInput.Flush();
             process.StandardInput.Close();
             process.WaitForExit();
-            Console.WriteLine(process.StandardOutput.ReadToEnd());
-            Console.ReadKey();
+            //Console.WriteLine(process.StandardOutput.ReadToEnd());
+            //Console.ReadKey();
         }
     }
 }
