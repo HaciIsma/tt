@@ -1,0 +1,6 @@
+C:\Users\Haci\source\repos\tt\tt\bin\Debug\tt.exe.config
+C:\Users\Haci\source\repos\tt\tt\bin\Debug\tt.exe
+C:\Users\Haci\source\repos\tt\tt\bin\Debug\tt.pdb
+C:\Users\Haci\source\repos\tt\tt\obj\Debug\tt.csprojAssemblyReference.cache
+C:\Users\Haci\source\repos\tt\tt\obj\Debug\tt.exe
+C:\Users\Haci\source\repos\tt\tt\obj\Debug\tt.pdb
