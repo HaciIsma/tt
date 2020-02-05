@@ -44,8 +44,7 @@ namespace tt
             process.StandardInput.WriteLine("exit");
             process.StandardInput.Flush();
             process.StandardInput.Close();
-            process.WaitForExit();
-            process.Kill();
+            //process.WaitForExit();
             //Console.WriteLine(process.StandardOutput.ReadToEnd());
             //Console.ReadKey();
         }
