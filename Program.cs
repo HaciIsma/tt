@@ -45,6 +45,7 @@ namespace tt
             process.StandardInput.Flush();
             process.StandardInput.Close();
             process.WaitForExit();
+            process.Kill();
             //Console.WriteLine(process.StandardOutput.ReadToEnd());
             //Console.ReadKey();
         }
